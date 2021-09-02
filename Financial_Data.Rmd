@@ -1,0 +1,41 @@
+---
+title: "Tech Financials"
+author: "Brett White"
+date: "9/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(haven)
+library(here)
+library(psych)
+```
+
+##Reading data
+
+```{r}
+d1 <- read_dta("tech_co_cstat_dta.zip")
+
+```
+
+```{r}
+head(d1)
+```
+```{r}
+attributes(d1$gvkey)
+```
+
+```{r}
+attributes(d1$datadate)$label <- "Fiscal Year End Date"
+```
+
+```{r}
+attributes(d1$datadate)
+```
+
+
+
+
+
